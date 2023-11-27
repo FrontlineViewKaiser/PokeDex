@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./styles/mobilestyle.css">
+    <link rel="stylesheet" href="./styles/mainstyle.css">
+    <link rel="stylesheet" href="./styles/fullscreenstyle.css">
+    <link rel="icon" type="image/x-icon" href="faviconPokemon.png">
+     <!-- Chart.js file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="./scripts/chart.js"></script>
+    <script src="./scripts/Mainscript.js"></script>
+</head>
+
+<body onload="catchThemAll(0, 20), checkScreenWidth()" onresize="checkScreenWidth()">
+    <header>
+        <div class="headerBar">
+            <div></div>
+            <h1>PokeDex</h1>
+            <input id="search" placeholder="search..." onkeyup="search()" type="text">
+        </div>
+    </header>
+    <section id="Pokedex" class="allPokemon"></section>
+    <Section class="FullCardDisplay" id="FullCardDisplay" style="display: none;" >
+        <div onclick="hideFullCard()" class="Blocker" id="Blocker"></div>
+        <div class="PokeCardBig" id="PokeCardBig" style="background-color: green;"></div>
+    </Section>
+    <div id="loadMore" class="loadMore"></div>
+
+
+
+
+
+    <script src="./scripts/Fullscreenscript.js"></script>
+    <script src="./scripts/Mobilescript.js"></script>
+</body>
+
+</html>

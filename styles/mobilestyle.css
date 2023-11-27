@@ -1,0 +1,202 @@
+.PokecardHeaderM {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+}
+
+.PokecardHeaderM h2 {
+    text-align: center;
+    width: 70%;
+    font-size: 27px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.75));
+}
+
+.PokecardHeaderM button {
+    font-size: 18px;
+    border-radius: 12px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: solid 2px rgb(255, 255, 255);
+    filter: drop-shadow(-4px 5px 4px rgba(0, 0, 0, 0.75));
+}
+
+.PokecardHeaderM button:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.PokecardHeaderM p {
+    font-size: 21px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.75));
+}
+
+.PokecardMainContentM {
+    margin: 3.5% 0;
+    border-radius: 12px;
+    width: 95%;
+    height: 70%;
+    box-sizing: border-box;
+    padding-top: 50px;
+    filter: drop-shadow(-10px 10px 15px rgba(0, 0, 0, 0.75));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.PokecardMainContentM img {
+    width: 100%;
+    height: 60%;
+}
+
+
+.PokecardsubmenusM {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.PokecardsubmenusM button {
+    padding: 0;
+    border-radius: 12px;
+    border: solid 4px white;
+    color: rgb(0, 0, 0);
+    height: 50%;
+    width: 30%;
+    background-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    filter: drop-shadow(0px 14px 4px rgba(0, 0, 0, 0.75));
+}
+
+.PokecardsubmenusM button:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.M-types {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 10%
+}
+
+.M-types div {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top, transparent 1%, rgba(0, 0, 0, 0.5) 75%);
+    text-align: center;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: solid 4px white;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    width: 30%;
+    height: 10%;
+    color: white;
+}
+
+.appearanceM {
+    height: 80%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+}
+
+.appearanceM div {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.appearanceM h2 {
+    filter: drop-shadow(0px 14px 4px rgba(0, 0, 0, 0.75));
+    margin: 0;
+}
+
+.appearanceM p {
+    margin: 0;
+    font-size: 28px;
+}
+
+.M-stats {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.514);
+    font-weight: bold;
+    font-size: 20px;
+    width: 79%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+}
+
+.M-stats div {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.M-ability {
+    background-image: linear-gradient(to top, transparent 1%, rgba(0, 0, 0, 0.5) 75%);
+    border-radius: 12px;
+    border: solid 4px white;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    color: white;
+    padding: 4px 8px;
+    width: 90%;
+    height: auto;
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.M-ability h2 {
+    font-size: 16px;
+}
+
+/* Here begins the style of the Button to get out of the card */
+
+.returnbuttonM {
+    background-color: white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 900;
+    filter: drop-shadow(-4px 6px 4px rgba(0, 0, 0, 0.75));
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    border: solid 2px rgb(255, 255, 255);
+}
+
+.returnbuttonM:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}

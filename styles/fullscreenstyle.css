@@ -1,0 +1,183 @@
+.FullCardDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.Blocker {
+    z-index: 1;
+    background-color: #636363e0;
+    width: 100%;
+    height: 100%;
+}
+
+.FS-Name {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+}
+
+.PokeCardBigImageFS {
+    width: 90%;
+    height: 35%;
+    margin-bottom: 24px;
+    filter: drop-shadow(-10px 10px 15px rgba(0, 0, 0, 0.75));
+}
+
+.FS-StatSheet-divisions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.2%;
+    font-weight: bold;
+}
+
+.FS-StatSheet-divisions div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -2px 2px rgb(0, 0, 0);
+    height: 100%;
+    width: 33.3%;
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.FS-StatSheet-divisions div:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.FS-StatSheet {
+    z-index: 3;
+    box-shadow: 0 -2px 2px rgb(0, 0, 0);
+    bottom: 0;
+    left: 0;
+    color: rgb(0, 0, 0);
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.borderBottom {
+    z-index: 5 !important;
+}
+
+
+/* Here begins the style for the submenus */
+/* Here begins the Style for the Characteristics table on the Full Card */
+
+
+.characteristics {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.FS-types {
+    height: 80%;
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 38%;
+}
+
+.FS-type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to top, transparent 1%, rgba(0, 0, 0, 0.5) 75%);
+    text-align: center;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: solid 4px white;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    width: 70%;
+    height: 10%;
+    color: white;
+}
+
+.appearance {
+    height: 80%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5%;
+    font-size: 24px;
+}
+
+.appearance div {
+    height: 50%;
+}
+
+.appearance h2 {
+    filter: drop-shadow(0px 14px 4px rgba(0, 0, 0, 0.75));
+    margin: 0;
+}
+
+.appearance p {
+    margin: 24px 0 0 0;
+    font-size: 30px;
+}
+
+/* Here begins the styling of the BarChart */
+/* Here begins the styling of the BarChart */
+
+.Chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myChart {
+    width: 95% !important;
+    height: 70% !important;
+}
+
+/* Here begins the Style for the Abilities table on the Full Card */
+/* Here begins the Style for the Abilities table on the Full Card */
+
+.abilities {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ability {
+    background-image: linear-gradient(to top, transparent 1%, rgba(0, 0, 0, 0.5) 75%);
+    border-radius: 12px;
+    border: solid 4px white;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    color: white;
+    padding: 8px;
+    width: 80%;
+    height: 25%;
+}
