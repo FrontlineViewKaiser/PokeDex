@@ -1,27 +1,4 @@
 
-const pokemons = [
-    "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", 
-    "wartortle", "blastoise", "caterpie", "metapod", "butterfree", "weedle", "kakuna", 
-    "beedrill", "pidgey", "pidgeotto", "pidgeot", "rattata", "raticate", "spearow", 
-    "fearow", "ekans", "arbok", "pikachu", "raichu", "sandshrew", "sandslash", 
-    "nidorina", "nidoqueen", "nidorino", "nidoking", "clefairy", "clefable", 
-    "vulpix", "ninetales", "jigglypuff", "wigglytuff", "zubat", "golbat", "oddish", 
-    "gloom", "vileplume", "paras", "parasect", "venonat", "venomoth", "diglett", "dugtrio", 
-    "meowth", "persian", "psyduck", "golduck", "mankey", "primeape", "growlithe", "arcanine", 
-    "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "machop", "machoke", 
-    "machamp", "bellsprout", "weepinbell", "victreebel", "tentacool", "tentacruel", "geodude", 
-    "graveler", "golem", "ponyta", "rapidash", "slowpoke", "slowbro", "magnemite", "magneton", 
-    "doduo", "dodrio", "seel", "dewgong", "grimer", "muk", "shellder", "cloyster", 
-    "gastly", "haunter", "gengar", "onix", "drowzee", "hypno", "krabby", "kingler", "voltorb", 
-    "electrode", "exeggcute", "exeggutor", "cubone", "marowak", "hitmonlee", "hitmonchan", 
-    "lickitung", "koffing", "weezing", "rhyhorn", "rhydon", "chansey", "tangela", "kangaskhan", 
-    "horsea", "seadra", "goldeen", "seaking", "staryu", "starmie", "scyther", 
-    "jynx", "electabuzz", "magmar", "pinsir", "tauros", "magikarp", "gyarados", "lapras", 
-    "ditto", "eevee", "vaporeon", "jolteon", "flareon", "porygon", "omanyte", "omastar", 
-    "kabuto", "kabutops", "aerodactyl", "snorlax", "articuno", "zapdos", "moltres", "dratini", 
-    "dragonair", "dragonite"
-];
-
 //Gives the original game colors as fixed colorvalues to each type, so that the card color can be adjusted based on the primary type
 
 const PokemoncolorsByType = 
@@ -39,18 +16,27 @@ let screenData = {
     internalWidth: ''
 };
 
+
+
+async function fetchPokemon() {
+    for (let i = 1; i < 140; i++) {
+        let url = `https://pokeapi.co/api/v2/pokemon/${i}`
+        let response = await fetch(url);
+        responseAsJson = await response.json()
+        fetchedPokemonData.push(responseAsJson)
+        
+    }
+    console.log(fetchedPokemonData)
+}
+
 //Fetches the API data and starts the rendering process upon completion. Begins by grabbing the first 20 pokemon from the list "pokemons"
-async function catchThemAll(x, y) {
+async function displayPokemon(x, y) {
+    await fetchPokemon()
     for (let i = x; i < `${y}`; i++) {
-        const pokemon = pokemons[i]; 
-    
-    let url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-    let response = await fetch(url);
-    responseAsJson = await response.json()
-    fetchedPokemonData[i] = responseAsJson
+        const pokemon = fetchedPokemonData[i]; 
     loadMoreButton(x,y)
-    displayPokemonCard(fetchedPokemonData[i], i)
-    addTypes(fetchedPokemonData[i], i)
+    displayPokemonCard(pokemon, i)
+    addTypes(pokemon, i)
     }
 }
 
@@ -149,11 +135,11 @@ function hideFullCard() {
 }
 
 function loadMoreButton(x,y) {
-    if(y >= pokemons.length) {
+    if(y >= fetchedPokemonData.length) {
         document.getElementById('loadMore').innerHTML = ''
     } else {
     document.getElementById('loadMore').innerHTML = `
-    <Button onclick="catchThemAll(${x+20},${y+20})" class="loadMore">Load More</Button>
+    <Button onclick="displayPokemon(${x+20},${y+20})" class="loadMore">Load More</Button>
     `
     }
 }
@@ -192,11 +178,3 @@ function PokemonCard(PokemonData, i, PokemonColor) {
     )
 }
 
-
-//Purely Janitorial function to check functions and API's:
-
-/*async function callstuff() {
-    let stuff = await fetch('https://pokeapi.co/api/v2/ability/34/')
-    stuffAsJson = await stuff.json()
-    console.log(stuffAsJson)
-};*/
